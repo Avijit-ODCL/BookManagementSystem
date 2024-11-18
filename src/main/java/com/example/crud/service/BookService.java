@@ -36,4 +36,9 @@ public class BookService {
             return "Book Not Found";
         }
     }
+
+    public Book updateBook (Book updatedBook){
+        Book exisitingBook = bookRepository.findById(updatedBook.getId()).orElseThrow(NullPointerException::new);
+        return bookRepository.save(updatedBook);
+    }
 }
