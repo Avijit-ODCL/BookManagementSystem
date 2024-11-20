@@ -38,7 +38,7 @@ public class BookService {
     }
 
     public Book updateBook (Book updatedBook){
-        Book exisitingBook = bookRepository.findById(updatedBook.getId()).orElseThrow(NullPointerException::new);
+        Book existingBook = bookRepository.findById(updatedBook.getId()).orElseThrow(NullPointerException::new);
         return bookRepository.save(updatedBook);
     }
 }
